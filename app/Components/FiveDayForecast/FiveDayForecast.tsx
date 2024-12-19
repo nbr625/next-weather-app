@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
 import { calender } from "@/app/utils/Icons";
-import { kelvinToCelsius, unixToDay } from "@/app/utils/misc";
+import { unixToDay } from "@/app/utils/misc";
 import { Skeleton } from "@/components/ui/skeleton";
 import React from "react";
 
@@ -36,8 +36,8 @@ function FiveDayForecast() {
 
     return {
       day: unixToDay(dailyData[0].dt),
-      minTemp: kelvinToCelsius(minTemp),
-      maxTemp: kelvinToCelsius(maxTemp),
+      minTemp: minTemp,
+      maxTemp: maxTemp,
     };
   };
 
@@ -72,9 +72,9 @@ function FiveDayForecast() {
                 </p>
 
                 <div className="flex-1 flex items-center justify-between gap-4">
-                  <p className="font-bold">{day.minTemp}°C</p>
+                  <p className="font-bold">{Math.round(day.minTemp)}°F</p>
                   <div className="temperature flex-1 w-full h-2 rounded-lg"></div>
-                  <p className="font-bold">{day.maxTemp}°C</p>
+                  <p className="font-bold">{Math.round(day.maxTemp)}°F</p>
                 </div>
               </div>
             );

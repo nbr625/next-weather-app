@@ -9,7 +9,6 @@ import {
   rain,
   snow,
 } from "@/app/utils/Icons";
-import { kelvinToCelsius } from "@/app/utils/misc";
 import moment from "moment";
 
 function Temperature() {
@@ -21,9 +20,9 @@ function Temperature() {
     return <div>Loading...</div>;
   }
 
-  const temp = kelvinToCelsius(main?.temp);
-  const minTemp = kelvinToCelsius(main?.temp_min);
-  const maxTemp = kelvinToCelsius(main?.temp_max);
+  const temp = main?.temp;
+  const minTemp = main?.temp_min;
+  const maxTemp = main?.temp_max;
 
   // State
   const [localTime, setLocalTime] = useState<string>("");
@@ -68,7 +67,7 @@ function Temperature() {
 
   return (
     <div
-      className="pt-6 pb-5 px-4 border rounded-lg flex flex-col 
+      className="pt-6 pb-5 px-4 border rounded-lg flex flex-col
         justify-between dark:bg-dark-grey shadow-sm dark:shadow-none"
     >
       <p className="flex justify-between items-center">
@@ -79,7 +78,7 @@ function Temperature() {
         <span>{name}</span>
         <span>{navigation}</span>
       </p>
-      <p className="py-10 text-9xl font-bold self-center">{temp}°</p>
+      <p className="py-10 text-9xl font-bold self-center">{Math.round(temp)}°F</p>
 
       <div>
         <div>
@@ -87,8 +86,8 @@ function Temperature() {
           <p className="pt-2 capitalize text-lg font-medium">{description}</p>
         </div>
         <p className="flex items-center gap-2">
-          <span>Low: {minTemp}°</span>
-          <span>High: {maxTemp}°</span>
+          <span>Low: {Math.round(minTemp)}°</span>
+          <span>High: {Math.round(maxTemp)}°</span>
         </p>
       </div>
     </div>

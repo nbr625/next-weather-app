@@ -1,7 +1,6 @@
 "use client";
 import { useGlobalContext } from "@/app/context/globalContext";
 import { thermometer } from "@/app/utils/Icons";
-import { kelvinToCelsius } from "@/app/utils/misc";
 import { Skeleton } from "@/components/ui/skeleton";
 import React from "react";
 
@@ -42,7 +41,7 @@ function FeelsLike() {
         <h2 className="flex items-center gap-2 font-medium">
           {thermometer} Feels Like
         </h2>
-        <p className="pt-4 text-2xl">{kelvinToCelsius(feels_like)}°</p>
+        <p className="pt-4 text-2xl">{Math.round(feels_like)}°</p>
       </div>
 
       <p className="text-sm">{feelsLikeDescription}</p>

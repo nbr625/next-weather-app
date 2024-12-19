@@ -1,17 +1,10 @@
 const defaultStates = [
   {
-    name: "Madrid",
-    country: "ES",
-    state: "Madrid",
-    lat: 40.4165,
-    lon: -3.7026,
-  },
-  {
-    name: "London",
-    country: "GB",
-    state: "England",
-    lat: 51.5074,
-    lon: 0.1278,
+    name: "Oakland",
+    country: "US",
+    state: "California",
+    lat: 37.8044,
+    lon: -122.2712,
   },
   {
     name: "New York",
@@ -19,6 +12,13 @@ const defaultStates = [
     state: "New York",
     lat: 40.7128,
     lon: -74.006,
+  },
+  {
+    name: "London",
+    country: "GB",
+    state: "England",
+    lat: 51.5074,
+    lon: 0.1278,
   },
   {
     name: "Sydney",

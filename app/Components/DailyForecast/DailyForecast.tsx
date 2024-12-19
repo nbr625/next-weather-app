@@ -9,7 +9,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import moment from "moment";
-import { kelvinToCelsius } from "@/app/utils/misc";
 
 function DailyForecast() {
   const { forecast, fiveDayForecast } = useGlobalContext();
@@ -88,7 +87,7 @@ function DailyForecast() {
                         </p>
                         <p>{getIcon()}</p>
                         <p className="mt-4">
-                          {kelvinToCelsius(forecast.main.temp)}°C
+                          {Math.round(forecast.main.temp)}°F
                         </p>
                       </CarouselItem>
                     );

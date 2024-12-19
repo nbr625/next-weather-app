@@ -16,10 +16,10 @@ function Visibility() {
   const getVisibilityDescription = (visibility: number) => {
     const visibilityInKm = Math.round(visibility / 1000);
 
-    if (visibilityInKm > 10) return "Excellent: Clear and vast view";
-    if (visibilityInKm > 5) return "Good: Easily navigable";
-    if (visibilityInKm > 2) return "Moderate: Some limitations";
-    if (visibilityInKm <= 2) return "Poor: Restricted and unclear";
+    if (visibilityInKm > 6) return "Excellent: Clear and vast view";
+    if (visibilityInKm > 3) return "Good: Easily navigable";
+    if (visibilityInKm > 1) return "Moderate: Some limitations";
+    if (visibilityInKm <= 1) return "Poor: Restricted and unclear";
     return "Unavailable: Visibility data not available";
   };
   return (
@@ -28,7 +28,7 @@ function Visibility() {
         <h2 className="flex items-center gap-2 font-medium">
           {eye} Visibility
         </h2>
-        <p className="pt-4 text-2xl">{Math.round(visibility / 1000)} km</p>
+        <p className="pt-4 text-2xl">{Math.round(visibility / 1000)} mi</p>
       </div>
 
       <p className="text-sm">{getVisibilityDescription(visibility)}.</p>

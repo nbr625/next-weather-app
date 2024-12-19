@@ -17,7 +17,7 @@ function Wind() {
 
   return (
     <div
-      className="pt-6 pb-5 px-4 h-[12rem] border rounded-lg flex 
+      className="pt-6 pb-5 px-4 h-[12rem] border rounded-lg flex
     flex-col gap-3 dark:bg-dark-grey shadow-sm dark:shadow-none"
     >
       <h2 className="flex items-center gap-2 font-medium">{wind} Wind</h2>
@@ -46,7 +46,7 @@ function Wind() {
           className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-xs
             dark:text-white font-medium"
         >
-          {Math.round(windSpeed)} m/s
+          {Math.round(windSpeed)} f/s
         </p>
       </div>
     </div>

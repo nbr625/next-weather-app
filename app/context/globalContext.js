@@ -14,7 +14,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState("");
 
   const [activeCityCoords, setActiveCityCoords] = useState([
-    51.752021, -1.257726,
+    37.8044, -122.2712,
   ]);
 
   const [airQuality, setAirQuality] = useState({});
@@ -23,7 +23,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const fetchForecast = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/weather?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`api/weather?lat=${lat}&lon=${lon}&units=imperial`);
 
       setForecast(res.data);
     } catch (error) {
@@ -34,7 +34,7 @@ export const GlobalContextProvider = ({ children }) => {
   // Air Quality
   const fetchAirQuality = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/pollution?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`api/pollution?lat=${lat}&lon=${lon}&units=imperial`);
       setAirQuality(res.data);
     } catch (error) {
       console.log("Error fetching air quality data: ", error.message);
@@ -44,7 +44,7 @@ export const GlobalContextProvider = ({ children }) => {
   // five day forecast
   const fetchFiveDayForecast = async (lat, lon) => {
     try {
-      const res = await axios.get(`api/fiveday?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`api/fiveday?lat=${lat}&lon=${lon}&units=imperial`);
 
       setFiveDayForecast(res.data);
     } catch (error) {
@@ -55,7 +55,7 @@ export const GlobalContextProvider = ({ children }) => {
   //geocoded list
   const fetchGeoCodedList = async (search) => {
     try {
-      const res = await axios.get(`/api/geocoded?search=${search}`);
+      const res = await axios.get(`/api/geocoded?search=${search}&units=imperial`);
 
       setGeoCodedList(res.data);
     } catch (error) {
@@ -66,7 +66,7 @@ export const GlobalContextProvider = ({ children }) => {
   //fetch uv data
   const fetchUvIndex = async (lat, lon) => {
     try {
-      const res = await axios.get(`/api/uv?lat=${lat}&lon=${lon}`);
+      const res = await axios.get(`/api/uv?lat=${lat}&lon=${lon}&units=imperial`);
 
       seUvIndex(res.data);
     } catch (error) {
